@@ -1,0 +1,27 @@
+name: Netlify Build Logs
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  netlify:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Trigger Netlify build
+      uses: netlify/actions/trigger-build@v1
+      with:
+        site_id: ${{ secrets.NETLIFY_SITE_ID }} 
+        auth_token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+    - name: Output Build Logs
+      run: |
+        echo "Netlify Build Logs"
