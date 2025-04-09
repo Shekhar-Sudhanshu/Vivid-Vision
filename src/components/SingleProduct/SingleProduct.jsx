@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import handImg from "../../assets/products/hand_gesture_img.jpg"
 import eyeImg from "../../assets/products/eye gesture.png"
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
+import {toast} from 'react-hot-toast';
 
 import {
     FaFacebookF,
@@ -48,6 +49,11 @@ const SingleProduct = () => {
         fetchData();
     }, [id]);
 
+    const handleClick = () => {
+        console.log("Hello");
+        toast.error("Coming Soon...");
+    }
+
     if (!data) {
         return <p>Loading...</p>;
     }
@@ -63,7 +69,10 @@ const SingleProduct = () => {
                     <span className="price">{data.price}</span>
                     <span className="description">{data.desc}</span>
 
-                    <div className="cart-buttons">
+                    <div 
+                        className="cart-buttons"
+                        onClick={handleClick}
+                    >
                         <button className="add-to-cart-button">
                             <FaCartPlus size={20}/>
                             Download
