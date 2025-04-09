@@ -32,7 +32,7 @@ const Header = () => {
                         {/* <li>Home</li> */}
                         <NavLink to="/about/">About</NavLink>
                         {/* <li>About</li> */}
-                        <NavLink to="/category/">Products</NavLink>
+                        <NavLink to="/category/">Categories</NavLink>
                         {/* <li>Categories</li> */}
                         <NavLink to="/howto/">How To</NavLink>
                         {/* <li>How To</li> */}
