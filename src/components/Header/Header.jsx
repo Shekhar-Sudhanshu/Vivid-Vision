@@ -37,7 +37,7 @@ const Header = () => {
                         <NavLink to="/howto/">How To</NavLink>
                         {/* <li>How To</li> */}
                     </ul>
-                    <div className="center">VIVID VISION</div>
+                    <div className="center"><NavLink to="/">VIVID VISION</NavLink></div>
                     <div className="right">
                         <FaRegUserCircle />
                     </div>

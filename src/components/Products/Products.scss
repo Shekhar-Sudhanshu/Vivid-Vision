@@ -32,6 +32,7 @@
         display: flex;
         flex-flow: wrap;
         gap: 10px;
+        
         @include md {
             gap: 20px;
         }
