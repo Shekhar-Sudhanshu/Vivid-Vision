@@ -3,7 +3,7 @@ name: Netlify Build Logs
 on:
   push:
     branches:
-      - main
+      - main  # Or your main branch
   pull_request:
     branches:
       - main
@@ -16,11 +16,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Trigger Netlify build
-      uses: netlify/actions/trigger-build@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
       with:
-        site_id: ${{ secrets.NETLIFY_SITE_ID }} 
-        auth_token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        node-version: '20'
+
+    - name: Install Netlify CLI
+      run: npm install -g netlify-cli
+
+    - name: Trigger Netlify build
+      run: |
+        netlify deploy --prod --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
     - name: Output Build Logs
       run: |
