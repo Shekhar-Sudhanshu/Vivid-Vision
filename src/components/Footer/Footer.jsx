@@ -16,7 +16,7 @@ const Footer = () => {
                 <div className="c-items">
                     <FaLocationArrow/>
                     <div className="fottext">
-                        Sadar, Near Kali Mandir, Jabalpur MP,482001
+                        Gyan Ganga Institute of Technology & Sciences, Jabalpur MP,482001
                     </div>
                 </div>
                 <div className="c-items">
