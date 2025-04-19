@@ -63,7 +63,7 @@ const SingleProduct = () => {
             fileName = 'Hand Gesture Control System.zip';
         }
 
-        if(fileURL == '' || fileName == ''){
+        if(fileURL === '' || fileName === ''){
             toast.error("Some error occurred");
             return;
         }
