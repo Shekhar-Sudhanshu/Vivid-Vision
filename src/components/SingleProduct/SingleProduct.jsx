@@ -50,8 +50,29 @@ const SingleProduct = () => {
     }, [id]);
 
     const handleClick = () => {
-        console.log("Hello");
-        toast.error("Coming Soon...");
+        const link = document.createElement('a');
+        let fileURL = '';
+        let fileName = '';
+
+        if(id === "eyeMotion"){
+            fileURL = '/Eye Motion Control System.zip'; 
+            fileName = 'Eye Motion Control System.zip';
+        }
+        else if(id === "handGesture"){
+            fileURL = '/Hand Gesture Control System.zip';
+            fileName = 'Hand Gesture Control System.zip';
+        }
+
+        if(fileURL == '' || fileName == ''){
+            toast.error("Some error occurred");
+            return;
+        }
+
+        link.href = fileURL
+        link.download = fileName
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     }
 
     if (!data) {
